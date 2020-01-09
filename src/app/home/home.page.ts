@@ -24,13 +24,13 @@ export class HomePage {
           const count = appointment.units.reduce(bedsAndBathsCalc, { beds: 0, baths: 0 });
           const label = statusLabel(appointment.status);
           const color = statusColor(appointment.status);
-          const roomsAndBath = `${count.beds} BD ${count.baths} BT`;
+          const roomsAndBaths = `${count.beds} BD ${count.baths} BT`;
           return {
             ...appointment,
             key: value.key,
             label,
             color,
-            roomsAndBath
+            roomsAndBaths
           };
         });
       }

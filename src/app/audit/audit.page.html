@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>audit</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+  <ion-toolbar color="primary">
+    <ion-title>Apt # {{model?.number}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card-class="welcome-card" [router-Link]="['/audit', appointment.key]"
-  *ngFor="let appointment of appointments$ | async"></ion-card-class>
+<ion-content padding>
+    <form [formGroup]="form" *ngIf="model">
+        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form">
+            <ion-button shape="round" (click)="submit()" expand="full" color="primary">Save</ion-button>
+        </formly-form>
+      </form>
 </ion-content>
